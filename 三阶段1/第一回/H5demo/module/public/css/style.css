@@ -1,0 +1,53 @@
+html{height: 100%;}
+body{height: 100%;}
+
+/*-----------自定义公用-----------*/
+body{color: #666;background: #f1f1f1;}
+
+/*文本颜色*/
+.c-caveat{color: #F86F1D;}
+.c-caveat-i{color: #F86F1D ! important;}
+.c-complete{color: green;}
+.c-complete-i{color: green ! important;}
+.c-unusual{color: #FF00FF;}
+.c-unusual-i{color: #FF00FF ! important;}
+.c-green{color: #31790B;}
+.c-green-i{color: #31790B ! important;}
+.c-important{color: #ffe400;}
+
+/*背景色*/
+.bc-main{background: #f86f1d;color: #fff;}
+.bc-main-i{background: #f86f1d ! important;color: #fff ! important;}
+.bc-title{background: #858ab3;color: #fff;}
+.bc-title-i{background: #858ab3 ! important;color: #fff ! important;}
+.bc-header{background: #414356 ! important;color: #fff ! important;}
+.bc-title2{background: #b0b3ce ! important;color: #fff ! important;}
+/*宽度*/
+.w4{width: 4%;}
+.w45{width: 45%;}
+.w48{width: 48%;}
+/*框架重写*/
+
+/*-----------版块-----------*/
+
+/*-----------媒体查询-----------*/
+@media (min-width:0px){
+}
+@media (min-width:700px){
+}
+@media (min-width:800px){
+}
+@media (min-width:1000px){
+}
+@media (min-width:1100px){
+}
+@media (min-width:1260px) {
+}
+@media (min-width:1300px) {
+}
+@media (min-width:1400px) {
+}
+@media (min-width:1500px) {
+}
+@media (min-width:1600px) {
+}

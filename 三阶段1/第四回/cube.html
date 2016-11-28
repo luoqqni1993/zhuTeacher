@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			.panel{
+				width: 100px;	
+				height: 100px;
+				perspective: 1500px;
+			}
+			ul{
+				width: 100px;	
+				height: 100px;
+				margin-top: 200px;
+				position: relative;
+				transition: all 2s;
+				transform-style: preserve-3d;
+				transform: scaleZ(3);
+			}
+			ul:hover{
+				transform:rotateX(180deg);
+			}
+			ul li{
+				height: 100px;
+				width: 100px;
+				background: rgba(53,187,237,0.5);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: -50px 0 0 -50px;
+				border: 1px solid #FFFF00;
+				box-sizing: border-box;
+				line-height: 100px;
+				text-align: center;
+				color: #fff;
+				font-size: 32px;
+			}
+			ul li.m-top{
+				transform: rotateX(90deg)translateZ(50px);
+			}
+			ul li.m-bottom{
+				transform: rotateX(-90deg)translateZ(50px);
+			}
+			ul li.m-left{
+				transform: rotateY(90deg)translateZ(50px);
+			}
+			ul li.m-right{
+				transform: rotateY(-90deg)translateZ(50px);
+			}
+			ul li.m-prev{
+				transform: translateZ(50px);
+				z-index: 2;
+			}
+			ul li.m-next{
+				transform: translateZ(-50px)rotateY(-180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="panel block-center">
+			<ul>
+				<li class="m-top">上</li>
+				<li class="m-bottom">下</li>
+				<li class="m-left">左</li>
+				<li class="m-right">右</li>
+				<li class="m-prev">前</li>
+				<li class="m-next">后</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,57 @@
+*{
+	margin:0;
+	padding:0;
+}
+}
+a{
+	text-decoration:none;
+}
+img{
+	border:none;
+}
+html,body,div,span,iframe,h1,h2,h3,h4,h5,p,pre,em,img,strong,b,i,dl,dt,dd,ul,li,fieldset,form,label,legend,tbody,tfoot,thead{margin:0;padding:0;border:0;outline:0}
+a,input,button{padding:0;margin:0;outline:0}
+h1,h2,h3,h4,h5{font-size:100%}
+ul{list-style:none}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+a,button{cursor:pointer}
+
+.flt{
+	float:left;_display:inline !important;
+}
+.frt{
+	float:right;_display:inline !important;
+	_display:inline !important;
+}
+.p_rte{position:relative;}
+
+.w1000{width:1000px;margin:0 auto;}
+
+/*==========以下部分是Validform必须的===========*/
+.Validform_checktip{
+	margin-left:8px;
+	line-height:20px;
+	height:20px;
+	overflow:hidden;
+	color:#999;
+	font-size:12px;
+}
+.Validform_right{
+	color:#71b83d;
+	padding-left:20px;
+	background:url(../images/right.png) no-repeat left center;
+}
+.Validform_wrong{
+	color:red;
+	padding-left:20px;
+	white-space:nowrap;
+	background:url(../images/error.png) no-repeat left center;
+}
+.Validform_loading{
+	padding-left:20px;
+	background:url(../images/onLoad.gif) no-repeat left center;
+}
+.Validform_error{
+	background-color:#ffe7e7;
+}

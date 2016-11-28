@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		
+	</head>
+	<body>
+		<progress value="10" max="100" id="pro"></progress>
+		
+		<audio id="adPlay">
+			<source src="public/music/演员 - 薛之谦.ogg" />
+			<source src="public/music/演员 - 薛之谦.mp3" />
+		</audio>
+		
+		<a href="javascript:;" class="play" onclick="abc()">播放</a>
+		<a href="javascript:;" class="play" onclick="ac()">暂停</a>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+//			获取js dom对象
+			var aDom = document.getElementById("adPlay");
+			getTime();
+			var countTime = 0;
+			function getTime(){
+				setTimeout(function(){
+					if(isNaN(aDom.duration) || aDom.duration == Infinity){
+						getTime();
+					}else{
+						countTime = aDom.duration;
+						console.log(countTime);
+						$("#pro").attr("max",countTime);
+					}
+				},10);
+			}
+			
+			setInterval(function(){
+				$("#pro").attr("value",aDom.currentTime);
+			},1000);
+			
+			function abc(){
+				aDom.play();
+				console.log(aDom.paused);
+			}
+			function ac(){
+				aDom.pause();
+				console.log(aDom.paused);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--css3选择器-->
+		<!--属性选择器-->
+		<!--伪类选择器-->
+		<!--结构选择器-->
+		<!--状态选择器-->
+		
+		<style type="text/css">
+			input{
+				width: 150px;
+			}
+			input[type='number']{
+				width: 50px;
+			}
+			/* ~= : 属性名包含有对应单词的标签*/
+			input[name~="a"]{
+				background: #f00;
+			}
+			
+			/* |= : 属性名以对应的字符为开头的标签,其中开头表示以-为分隔符的属性值*/
+			input[name |= "cad" ]{
+				border:3px solid #F0AD4E; 
+			}
+			
+			/* ^= : 以对应字符为整个属性值开头的标签*/
+			input[name ^= "c"]{
+				box-shadow: 0 0 5px rgba(0,0,0,0.86);
+			}
+			
+			/* $= : 以对应字符为整个属性值结尾的标签*/
+			input[name $= "c"]{
+				border-radius: 100px;
+			}
+			
+			/* *= : 属性包含有对应字符的标签  */
+			input[name *= "d"]{
+				background: #F32043;
+			}
+			
+		</style>
+		<!--*********属性选择器********-->
+		<form action="" method="post">
+			商品名:<input type="text" name="abc ac" id="" value="" /><br />
+			数量:<input type="number" name="adc cba" id="" value="" /><br />
+			搜索:<input type="search" name="abc " id="" value="" /><br />
+			
+			
+		</form>
+		
+	</body>
+</html>

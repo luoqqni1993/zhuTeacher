@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="./public/css/base.css">
+	<link rel="stylesheet" href="./public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="public/css/swiper.min.css"/>
+	 <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+	<style type="text/css">
+		.swiper-container{
+			width: 700px;
+			background: #ccc;
+		}
+		.swiper-slide{
+			height: 380px;
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: auto;
+		}
+		.swiper-pagination-bullet{
+			background: rgba(255,255,255,0.74);
+		}
+		.swiper-pagination-bullet-active{
+			background: #F86F1D;
+		}
+	</style>
+	<div class="swiper-container block-center mt15 abcd">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				1
+				<img src="public/images/img2.jpg"/>
+			</div>
+			<div class="swiper-slide">
+				2
+				<img src="public/images/img1.jpg"/>
+			</div>
+			<div class="swiper-slide">
+				3
+				<img src="public/images/img2.jpg"/>
+			</div>
+		</div>
+		
+		<div class="swiper-pagination zhu"></div>
+		
+		<div class="swiper-button-prev"></div>
+    		<div class="swiper-button-next"></div>
+	</div>
+
+
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="public/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper(".swiper-container",{
+//			autoplay :1000,
+			speed : 500,
+			loop : true,
+			initialSlide : 1,
+			autoplayDisableOnInteraction : false,
+			pagination : ".zhu",
+			paginationClickable : true,
+			prevButton:'.swiper-button-prev',
+			nextButton:'.swiper-button-next'
+		});
+	</script>
+</body>
+</html>

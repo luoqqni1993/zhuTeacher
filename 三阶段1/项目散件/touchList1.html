@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			body{
+				background: #e5e5e5;
+			}
+			ul{
+				background: #fff;
+			}
+			.anm{
+				transition: all 0.45s;
+			}
+			ul li{
+				height: 50px;
+				font:18px/50px "微软雅黑";
+				color: #666;
+				border-bottom:1px solid #ccc;
+				padding: 0 15px;
+			}
+			
+			.pageBox .text{
+				position: fixed;
+				top: 50%;
+				color: #428BCA;
+				font: 20px/35px "微软雅黑";
+				width: 120px;
+				text-align: center;
+				transform: translateY(-50%);
+				z-index: -1;
+			}
+			.pageBox .text.left{
+				left: 0;
+			}
+			.pageBox .text.right{
+				right: 0;
+			}
+			.pageBox .text p{
+				font: 18px/45px "microsoft yahei";
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="abc">
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+			<li>这是一行列表文字</li>
+		</ul>
+		<div class="pageBox">
+			<div class="text left">
+				<div class="iconfont">></div>
+				<p>上一页</p>
+			</div>
+			<div class="text right">
+				<div class="iconfont"><</div>
+				<p>下一页</p>
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var uDom = $("#abc"),startX,startY;
+			
+			uDom.on("touchstart",function(e){
+				uDom.removeClass("anm");
+				
+				startX = e.originalEvent.targetTouches[0].pageX;
+				startY = e.originalEvent.targetTouches[0].pageY;
+			});
+			
+			uDom.on("touchmove",function(e){
+				var mX = e.originalEvent.targetTouches[0].pageX - startX;
+				var mY = e.originalEvent.targetTouches[0].pageY - startY;
+				var x = -mX;
+				var s = 180/150;
+				
+				if(Math.abs(mX) > Math.abs(mY)*4){
+					if(mX > 0){
+					if(Math.abs(mX) < 150){
+						$(".text.left").find(".iconfont").css("transform","rotate("+(x*s)+"deg)")
+						uDom.css("transform","translateX("+mX+"px)");
+					}else{
+						//执行翻页动作
+						uDom.trigger("touchend");
+						alert("翻页了!");
+					}
+				}else{
+					if(Math.abs(mX) < 150){
+						$(".text.right").find(".iconfont").css("transform","rotate("+(x*s)+"deg)")
+						uDom.css("transform","translateX("+mX+"px)");
+					}else{
+						//执行翻页动作
+						uDom.trigger("touchend");
+						alert("翻页了!");
+					}
+				}
+				}
+				
+				
+			});
+			
+			uDom.on("touchend",function(e){
+				uDom.addClass("anm");
+				uDom.css("transform","translateX(0px)")
+			});
+			
+		</script>
+	</body>
+</html>

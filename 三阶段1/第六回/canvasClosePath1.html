@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="500" height="500" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			
+			
+			can.rect(250,200,400,400);
+//			can.stroke();
+			can.clip();
+			can.beginPath();
+			
+			can.lineWidth = 15;
+			can.fillStyle = "#f00";
+			
+			can.moveTo(250,250);
+			can.arc(250,250,100,-0.25*Math.PI,0.25*Math.PI);
+//			can.lineTo(250,250);
+			can.closePath();//关闭路径
+			
+			can.fill();
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+.wh(@w,@h){
+    width:@w;
+    height: @h;
+}
+.btn(@w,@h,@bg,@r:5px,@fz:14px){
+    display: block;
+    .wh(@w,@h);
+    font:@fz/@h "microsoft yahei";
+    text-align: center;
+    text-decoration: none;
+    border-radius: @r;
+}
+.tm(@content){
+    transform:@content ;
+    -webkit-transform:@content ;
+    -o-transform:@content ;
+    -moz-transform:@content ;
+    -ms-transform:@content ;
+}

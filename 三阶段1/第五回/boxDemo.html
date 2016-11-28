@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			/*父级盒子,设置display:box (注意加上私有前缀)*/
+			.box{
+				margin-top: 50px;
+				background: #ccc;
+				display: -webkit-box;
+				display: box;
+			}
+			.box .item{
+				height: 50px;
+			}
+			
+			/*当子级没有设定宽度的时候,子级宽度按照box-flex值的比例进行分配*/
+			/*当父级盒子的宽度值大于子级盒子相加的和的时候,子级盒子扩展的宽度比例按照box-flex值的比例进行分配*/
+			/*当父级盒子的宽度值小于子级盒子相加的和的时候,子级盒子的收缩比例按照box-flex值的比例进行分配*/
+			.b-1{
+				width: 400px;
+				background: #F54766;
+			}
+			.b-2{
+				width: 300px;
+				-webkit-box-flex : 1;
+				background: #00C1B3;
+			}
+			.b-3{
+				width: 300px;
+				-webkit-box-flex :1;
+				background: #F0AD4E;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box w1000">
+			<div class="item b-1">
+				盒子1
+			</div>
+			<div class="item b-2">
+				盒子2
+			</div>
+			<div class="item b-3">
+				盒子3
+			</div>
+		</div>
+	</body>
+</html>

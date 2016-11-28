@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="500" height="500" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			var ju = {
+				x : 0,
+				y : 0,
+			}
+			run();
+			
+			function run(){
+				setTimeout(function(){
+					can.clearRect(0,0,dom.width,dom.height);
+					
+					can.fillStyle = "#00C1B3";
+					
+					can.rect(ju.x,ju.y,100,100);
+					ju.x ++;
+					
+					can.fill();
+					can.beginPath();
+					
+					run();
+				},10);
+			}
+			
+			
+		</script>
+	</body>
+</html>

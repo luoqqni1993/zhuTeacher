@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!--localStorage-->
+		<!--sessionStorage-->
+		<a href="webStorage2.html">跳转</a>
+		<script type="text/javascript">
+			var b = function(){
+				alert("nihao");
+			}
+			var user = {
+				userName : 'zhuiszhu',
+				age : 18,
+				shopCar : [
+					"牛奶","面包","爱情","汽车"
+				]
+			}
+			var userData =  JSON.stringify(user);
+			
+			//存储数据
+			localStorage.setItem("data",userData);
+			localStorage.setItem("user",userData);
+			var a = localStorage.getItem("data");
+			
+			a = JSON.parse(a);
+			//删除单个"Item"存储的数据
+			localStorage.removeItem("data");
+			//清除所有localStorage内的数据
+			localStorage.clear();
+			
+			var ac = localStorage.getItem("data");
+			var auser = localStorage.getItem("user");
+			
+			console.log("data:"+ac);
+			console.log("user:"+auser);
+			var index = localStorage.index();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="500" height="500" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			
+			//设置阴影颜色
+			can.shadowColor = "#000";
+//			设置阴影模糊度
+			can.shadowBlur = 30; 
+//			设置阴影x轴偏移量
+			can.shadowOffsetX = 30; 
+			//设置阴影y轴偏移量
+			can.shadowOffsetY = 30; 
+			
+			can.fillStyle = "#FF0000";
+			can.arc(250,250,50,0,2*Math.PI);
+			can.fill();
+			
+		</script>
+	</body>
+</html>

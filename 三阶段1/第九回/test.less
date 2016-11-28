@@ -1,0 +1,39 @@
+//向下渐变
+.tlg(@sc,@ec){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,43cff9+100 */
+    background: @sc; /* Old browsers */
+    background: -moz-linear-gradient(top,  @sc 0%, @ec 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  @sc 0%,@ec 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  @sc 0%,@ec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= %("%a",argb(@sc)), endColorstr=  %("%a",argb(@ec)),GradientType=0 ); /* IE6-9 */
+}
+.tlg(...){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,43cff9+100 */
+    background: extract(@arguments, 1); /* Old browsers */
+    background: -moz-linear-gradient(top,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= %("%a",argb(extract(@arguments, 1))), endColorstr=  %("%a",argb(extract(@arguments, 7))),GradientType=0 ); /* IE6-9 */
+}
+//向右渐变
+.llg(@sc,@ec){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,43cff9+100 */
+    background: @sc; /* Old browsers */
+    background: -moz-linear-gradient(left,  @sc 0%, @ec 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  @sc 0%,@ec 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  @sc 0%,@ec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= %("%a",argb(@sc)), endColorstr=  %("%a",argb(@ec)),GradientType=1 ); /* IE6-9 */
+}
+
+.rg(@sc,@ec){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+    background: -moz-radial-gradient(center, ellipse cover,  @sc 0%, @ec 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,  @sc 0%,@ec 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  @sc 0%,@ec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=%("%a",argb(@sc)), endColorstr=%("%a",argb(@ec)),GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.abc{
+//  .aaa(1px,2px,#acd);
+    .tlg(rgba(252,246,255,1),0%,rgba(230,154,255,1),50%,rgba(191,0,255,1),49%,rgba(210,0,255,1),100%);
+}

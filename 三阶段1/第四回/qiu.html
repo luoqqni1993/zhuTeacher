@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css" />
+		<style type="text/css">
+			body{
+				background: #000;
+			}
+			.box{
+				width: 100px;
+				perspective: 1500px;
+				margin-top: 350px;
+			}
+			.box ul{
+				width: 100px;
+				transform-style: preserve-3d;
+				position: relative;
+				animation: rotateQiu 10s linear infinite;
+			}
+			.box ul li{
+				height: 100px;
+				width: 100px;
+				left: 50%;
+				top: 50%;
+				margin: -50px 0 0 -50px;
+				position: absolute;
+				animation: smallAnm 40s linear infinite alternate;
+			}
+			.m-1{
+				transform: translateZ(300px);
+			}
+			.m-2{
+				transform: rotateY(90deg)translateZ(300px);
+			}
+			.m-3{
+				transform: rotateY(180deg)translateZ(300px);
+			}
+			.m-4{
+				transform: rotateY(270deg)translateZ(300px);
+			}
+			.m-5{
+				transform: rotateY(45deg)translateZ(300px);
+			}
+			.m-6{
+				transform: rotateY(135deg)translateZ(300px);
+			}
+			.m-7{
+				transform: rotateY(225deg)translateZ(300px);
+			}
+			.m-8{
+				transform: rotateY(315deg)translateZ(300px);
+			}
+			.m-9{
+				transform: rotateX(45deg)translateZ(300px)
+			}
+			.m-10{
+				transform: rotateY(90deg)rotateX(45deg)translateZ(300px)
+			}
+			.m-11{
+				transform: rotateY(180deg)rotateX(45deg)translateZ(300px)
+			}
+			.m-12{
+				transform: rotateY(270deg)rotateX(45deg)translateZ(300px)
+			}
+			.m-13{
+				transform: rotateX(90deg)translateZ(300px);
+			}
+			.m-14{
+				transform: rotateX(-45deg)translateZ(300px)
+			}
+			.m-15{
+				transform: rotateY(90deg)rotateX(-45deg)translateZ(300px)
+			}
+			.m-16{
+				transform: rotateY(180deg)rotateX(-45deg)translateZ(300px)
+			}
+			.m-17{
+				transform: rotateY(270deg)rotateX(-45deg)translateZ(300px)
+			}
+			.m-18{
+				transform: rotateX(-90deg)translateZ(300px);
+			}
+			
+			@keyframes rotateQiu{
+				from{
+					transform: rotateX(0)rotateY(0);
+				}
+				to{
+					transform: rotateX(360deg)rotateY(360deg);
+				}
+			}
+			@keyframes  smallAnm{
+				0%{
+					background: #00E8D7;
+					width:10px;
+					height: 10px;
+					margin: -5px 0 0 -5px;
+				}
+				25%{
+					background: #FFE400;
+					border-radius: 100px 0;
+					width:30px;
+					height: 10px;
+					margin: -5px 0 0 -15px;
+					box-shadow: 0 0 10px #FFE400;
+				}
+				50%{
+					background: #FF00FF;
+					border-radius: 0 100px;
+					width:50px;
+					height:50px;
+					margin: -25px 0 0 -25px;
+					box-shadow: 0 0 30px #FF00FF;
+				}
+				75%{
+					background: #fff;
+					border-radius: 100px;
+					width:4px;
+					height:4px;
+					margin: -2px 0 0 -2px;
+					box-shadow:none;
+				}
+				100%{
+					background: #F54766;
+					width: 100px;
+					height: 10px;
+					margin: -5px 0 0 -50px;
+					box-shadow: 0 0 5px #F54766;
+				}
+			}
+		</style>
+	</head>
+
+	<body> 
+		<div class="box block-center">
+			<ul>
+				<li class="m-1"></li>
+				<li class="m-2"></li>
+				<li class="m-3"></li>
+				<li class="m-4"></li>
+				<li class="m-5"></li>
+				<li class="m-6"></li>
+				<li class="m-7"></li>
+				<li class="m-8"></li>
+				<li class="m-9"></li>
+				<li class="m-10"></li>
+				<li class="m-11"></li>
+				<li class="m-12"></li>
+				<li class="m-13"></li>
+				<li class="m-14"></li>
+				<li class="m-15"></li>
+				<li class="m-16"></li>
+				<li class="m-17"></li>
+				<li class="m-18"></li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>

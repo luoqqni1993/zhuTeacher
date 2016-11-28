@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			header .logo{
+				height: 150px;
+				width: 300px;
+				background: #F54766;
+				font:45px/150px "微软雅黑";
+				text-align: center;
+				color: #fff;
+			}
+			header .input{
+				width: 400px;
+				height: 45px;
+				background: #fff;
+				border:1px solid #ccc;
+				border-radius: 5px;
+			}
+			nav {
+				height: 50px;
+				background: #00C1B3;
+			}
+			
+			nav ul li{
+				font:14px/50px "微软雅黑";
+				float: left;
+				color: #fff;
+				width: 100px;
+				text-align: center;
+			}
+			.main{
+			}
+			.main .page-left{
+				background: #aaa;
+				height: 600px;
+					margin-left: 10px;
+			}
+			.main .page-center{
+				background: #F7E1B5;
+				height: 600px;
+				margin:0 10px;
+			}
+			.main .page-right{
+				background: #FF00FF;
+				height: 600px;
+					margin-right: 10px;
+			}
+			@media only screen and (max-width:480px ) {
+				header .input{
+					display: none;
+				}
+			}
+			@media only screen and (max-width:770px ) {
+				.main .page-left{
+					display: none;
+				}
+			}
+			@media screen and (max-width:1025px) {
+				.main .page-right{
+					display: none;
+				}
+				nav ul li{
+					display: none;
+				}
+				nav ul li:nth-of-type(1){
+					display: block;
+				}
+				nav ul li:nth-of-type(2){
+					display: block;
+				}
+				nav ul li:nth-of-type(3){
+					display: block;
+				}
+				nav ul li:nth-of-type(4){
+					display: block;
+				}
+			}
+			@media screen and (min-width:1160px ){
+				.main{
+					width: 1000px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				.main .page-left{
+					width: 190px;
+				}
+				.main .page-center{
+					width: 500px;
+				}
+				.main .page-right{
+					width: 270px;
+				}
+			}
+			@media screen and (max-width:1161px ) {
+				.main{
+					display: flex;
+				}
+				.main .page-left{
+					flex: 171;
+				}
+				.main .page-center{
+					flex: 705;
+				}
+				.main .page-right{
+					flex: 166;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="clearfix">
+			<div class="logo flt">logo</div>
+			<div class="input frt"></div>
+			
+		</header>
+		<nav>
+			<ul class="w1000 clearfix" >
+				<li>导航1</li>
+				<li>导航2</li>
+				<li>导航3</li>
+				<li>导航4</li>
+				<li>导航5</li>
+				<li>导航6</li>
+				<li>导航7</li>
+				<li>导航8</li>
+			</ul>
+		</nav>
+		<div class="main clearfix">
+			<div class="flt page-left"></div>
+			<div class="flt page-center"></div>
+			<div class="frt page-right"></div>
+		</div>
+	</body>
+</html>

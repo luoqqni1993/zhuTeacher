@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业1018</title>
+		<link rel="stylesheet" type="text/css" href="module/public/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1455871092_2176027.css"/>
+	</head>
+	<body>
+		<style type="text/css">
+		@font-face {
+		  font-family: 'iconfont';
+		  src: url('//at.alicdn.com/t/font_1457573767_5048935.eot'); /* IE9*/
+		  src: url('//at.alicdn.com/t/font_1457573767_5048935.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		  url('//at.alicdn.com/t/font_1457573767_5048935.woff') format('woff'), /* chrome、firefox */
+		  url('//at.alicdn.com/t/font_1457573767_5048935.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		  url('//at.alicdn.com/t/font_1457573767_5048935.svg#iconfont') format('svg'); /* iOS 4.1- */
+		}
+        .iconfont{
+        		font-family: iconfont;
+        }         
+			header{
+				height: 45px;
+				background: rgb(255,185,0); /* Old browsers */
+				background: -moz-linear-gradient(top,  rgba(255,185,0,1) 0%, rgba(255,166,0,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top,  rgba(255,185,0,1) 0%,rgba(255,166,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom,  rgba(255,185,0,1) 0%,rgba(255,166,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb900', endColorstr='#ffa600',GradientType=0 ); /* IE6-9 */
+			}
+			header .logo{
+				width: 128px;
+				height: 45px;
+			}
+			header li{
+				text-align: center;
+				float: left;
+				width: 50px;
+				font:14px/45px "微软雅黑";
+				height: 45px;
+				color: #000;
+				position: relative;
+			}
+			header li.active,
+			header li:hover{
+				background: #2d2d2d;
+				color: #fff;
+			}
+			header .navBox{
+				width: 300px;
+				background: #2D2D2D;
+				display: none;
+				position: absolute;
+				top: 45px;
+				left: 0;
+				z-index: 1;
+			}
+			header li:hover .navBox{
+				display: block;
+			}
+			header .navBox .navBtn{
+				display: inline-block;
+				padding:0 10px;
+				font: 13px/35px "微软雅黑";
+				text-decoration: none;
+				color: #999999;
+			}
+		</style>
+		<header id="header">
+			<div class="w1000 clearfix">
+				<div class="logo flt">logo</div>
+				<nav class="flt">
+					<ul class="clearfix">
+						<li class="active">首页</li>
+						<li>作品<span class="iconfont icon-xiangxia"></span><div class="navBox">
+							<a href="javascript:;" class="navBtn">全部</a><a href="javascript:;" class="navBtn">UI</a><a href="javascript:;" class="navBtn">平面</a><a href="javascript:;" class="navBtn">网页</a>
+						</div></li>
+						<li>文章</li>
+						<li>工具</li>
+						<li>
+							<input type="color" id="navBg"/>
+						</li>
+						<li><span class="iconfont icon-kefu"></span></li>
+						<li><span class="iconfont icon-gonglve"></span></li>
+						<li><span class="iconfont icon-laba"></span></li>
+					</ul>
+				</nav>	
+			</div>
+		</header>
+		
+		<div>
+			<input type="text" id="txt"/>
+			<p id="contentTxt"></p>
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		
+		
+		<span class="iconfont" id="img"></span>
+		
+		
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			document.getElementById("navBg").addEventListener("input",function(){
+				$("#header").css("background",this.value);
+			});
+			
+			$("#txt").on("input",function(){
+				var txt = $(this).val();
+				$("#contentTxt").html(txt);
+			});
+			
+			
+			$("#img").html("<div></div>");
+			
+			
+		</script>
+	</body>
+</html>

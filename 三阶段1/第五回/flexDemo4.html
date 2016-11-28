@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			/*justify-content : 水平方向上对齐方式*/
+			/* flex-start :往第一个元素的方向靠齐   */
+			/* flex-end :往最后一个元素的方向靠齐   */
+			/* center :所有元素居中对齐   */
+			/* space-between : 元素两端对齐   */
+			/* space-around : 元素在容器内平均分布(与上一个属性值类似,区别在于两端会留有空隙)   */
+			
+			/*align-items: 垂直方向上的对齐方式*/
+			/* flex-start :往容器顶部靠齐   */
+			/* flex-end :往容器的底部靠齐   */
+			/* baseline : 以内容为基线对齐   */
+			/* center : 填充整个容器   */
+			
+			.box{
+				width: 800px;
+				height: 300px;
+				background: #ccc;
+				margin:50px auto;
+				display: flex;
+				justify-content : center;
+				align-items:flex-start;
+				/*no-wrap: 不换行*/
+				/*wrap: 换行*/
+				/*wrap-revers: 反向换行*/
+				flex-wrap:wrap;
+				align-content:stretch;
+				
+				/*flex-wrap: 定义弹性盒子是否可以换行*/
+				/*nowrap:不换行*/
+				/*wrap:换行*/
+				/*wrap-reverse:反向序列换行*/
+				
+				/*align-content: 定义多行内容在垂直方向上的排列方式*/
+				/*flex-start: 往开始的方向靠齐;
+				flex-end: 往结束的方向靠齐;
+				center: 往中间的方向靠齐;
+				space-between: 分别往两端靠齐,中间内容平均分布;
+				space-around: 内容平均分布;
+				stretch: 内容平均分布,同时向开始的方向靠齐;*/
+			}
+			.item{
+				height: 30px;
+			}
+			.item:nth-of-type(3n-2){
+				flex: 5 1 400px;
+				background: #009F95;
+			}
+			.item:nth-of-type(3n-1){
+				background: #F32043;
+				flex: 1 2 300px;
+			}
+			.item:nth-of-type(3n){
+				background: #F0AD4E;
+				flex: 3 3 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item b-1">盒子1</div>
+			<div class="item b-2">盒子2</div>
+			<div class="item b-3">盒子3</div>
+			<div class="item b-4">盒子4</div>
+			<div class="item b-5">盒子5</div>
+			<div class="item b-6">盒子6</div>
+			<div class="item b-7">盒子7</div>
+			<div class="item b-8">盒子8</div>
+			<div class="item b-9">盒子9</div>
+			<div class="item b-10">盒子10</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="500" height="500" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			
+			var clock = {
+				//时钟坐标值
+				x : dom.width/2,
+				y : dom.height/2,
+				//表盘半径
+				r : 200,
+				//表盘颜色
+				pl_c : "#0b96d7"
+			}
+			
+			can.translate(clock.x,clock.y);
+			can.save();
+			
+			run();
+			
+			function run(){
+				setTimeout(function(){
+					can.clearRect(0,0,dom.width,dom.height);
+					draw();
+					
+					var dateS = new Date();
+					
+					var s = dateS.getSeconds();//当前秒数
+					var h = dateS.getHours();//当前多少时
+					var m = dateS.getMinutes();//当前多少分
+					if(h > 12){
+						h = h-12;
+					}
+					var fdata = h*60*60 + m*60 + s;
+					
+					console.log(h);
+					dShi(fdata);
+					dFen(m);
+					
+					dMiao(s);
+					s ++;
+					run();
+				},1000);
+			}
+			
+			function draw(){
+				//画边框
+				can.fillStyle = clock.pl_c;
+				can.arc(0,0,clock.r,0,2*Math.PI);
+				can.fill();
+				can.beginPath();
+				
+				//画表盘
+				can.fillStyle = "#fff";
+				can.arc(0,0,clock.r-15,0,2*Math.PI);
+				can.fill();
+				can.beginPath();
+				//圆心
+				can.fillStyle = "#000";
+				can.arc(0,0,6,0,2*Math.PI);
+				can.fill();
+				can.beginPath();
+				
+				//画分刻度
+				for(var i = 0;i < 60 ; i++){
+	//				360度的圆分成60等份
+					var fen = 2/60;
+					can.rotate(fen*Math.PI);
+					can.lineWidth = 2;
+					can.moveTo(0,20-clock.r);
+					can.lineTo(0,30-clock.r);
+					can.stroke();
+					can.beginPath();
+				}
+				
+				//画时刻度
+				for(var i = 0; i < 12 ; i ++){
+					var shi = 2/12;
+					can.rotate(shi*Math.PI);
+					can.lineWidth = 3;
+					can.moveTo(0,20-clock.r);
+					can.lineTo(0,40-clock.r);
+					can.stroke();
+					can.beginPath();
+				}
+			}
+			
+			function dShi(shi){
+				
+				var sr = (2/43200)*shi;
+				//画时针
+				can.rotate(sr*Math.PI);
+				can.lineWidth = 5;
+				can.moveTo(0,30);
+				can.lineTo(0,110-clock.r);
+				can.stroke();
+				can.beginPath();
+				can.restore();
+				can.save();
+			}
+			
+			function dFen(fen){
+				//	画分针
+				var f = (2/60)*fen
+				can.rotate(f*Math.PI);
+				can.lineWidth = 3;
+				can.moveTo(0,40);
+				can.lineTo(0,70-clock.r);
+				can.stroke();
+				can.beginPath();
+				can.restore();
+				can.save();
+			}
+			
+			function dMiao(pi){
+				var rtt = pi*(2/60);
+				
+	//			画秒针
+				can.rotate(rtt*Math.PI);
+				can.lineWidth = 2;
+				can.strokeStyle = "#f00"
+				can.moveTo(0,50);
+				can.lineTo(0,50-clock.r);
+				can.stroke();
+				can.beginPath();
+				can.restore();
+				can.save();	
+			}
+			
+			
+
+			
+			
+		</script>
+	</body>
+</html>

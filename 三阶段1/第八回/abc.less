@@ -1,0 +1,39 @@
+@mainColor : #a90506;//定义变量
+
+header{
+    background: @mainColor;
+}
+
+.btn(@height,@width,@background){//定义参数
+    display: block;
+    border-radius: 5px;
+    height: @height;
+    font: 18px/@height "微软雅黑";
+    width: @width;
+    background: @background;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-red{
+    .btn(50px,140px,@mainColor);
+}
+.btn-main{
+    .btn(60px,90%,blue);
+}
+
+.btn3{
+    .btn(30px,30px,#f00);
+}
+
+header{
+    height: 50px;
+    
+    nav{//样式嵌套
+        background: #009F95;
+        
+        li{
+           float: left; 
+        }
+    }
+}

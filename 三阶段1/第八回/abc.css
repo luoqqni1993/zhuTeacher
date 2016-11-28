@@ -1,0 +1,42 @@
+header {
+  background: #a90506;
+}
+.btn-red {
+  display: block;
+  border-radius: 5px;
+  height: 50px;
+  font: 18px/50px "微软雅黑";
+  width: 140px;
+  background: #a90506;
+  text-align: center;
+  text-decoration: none;
+}
+.btn-main {
+  display: block;
+  border-radius: 5px;
+  height: 60px;
+  font: 18px/60px "微软雅黑";
+  width: 90%;
+  background: #0000ff;
+  text-align: center;
+  text-decoration: none;
+}
+.btn3 {
+  display: block;
+  border-radius: 5px;
+  height: 30px;
+  font: 18px/30px "微软雅黑";
+  width: 30px;
+  background: #ff0000;
+  text-align: center;
+  text-decoration: none;
+}
+header {
+  height: 50px;
+}
+header nav {
+  background: #009F95;
+}
+header nav li {
+  float: left;
+}

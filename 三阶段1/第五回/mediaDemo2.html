@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			.box{
+				height: 150px;
+			}
+			@media only screen and (min-width:800px ) {
+				.box:after{
+					content : "大于800px";
+				}
+			}
+			@media only screen and (min-width:1000px ) {
+				.box:after{
+					content : "大于1000px";
+				}
+				.box{
+					background: #f00;
+				}
+			}
+			@media only screen and (min-width:900px ) {
+				
+				.box:after{
+					content : "大于900px";
+				}
+			}
+			
+			/*媒体查询采用min-width的时候,优先级从下往上执行*/
+			/*以最先匹配到的属性为优先*/
+			/*本例中,content,已经在大于900的情况下被应用上样式了,所以,在后面的1000 和 800的情况下,不会被应用到相应元素上
+			而background在900px的情况下,并没有被应用过样式,所以,在后面的1000px情况下,会被应用到该上*/
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		<script type="text/javascript">
+			var a = 12;
+			function abc(){
+//				var a = 8;
+				
+				function aaa(){
+//					var a = 1;
+					
+					console.log(a);
+				}
+				
+				aaa();
+			}
+			abc();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+	</head>
+	<body>
+		<style type="text/css">
+			.btn{
+				display: block;
+				width: 150px;
+				height: 45px;
+				font:14px/45px "微软雅黑";
+				color: #fff;
+				background: #0699CB;
+				text-decoration: none;
+				text-align: center;
+				transition-property:all;
+				transition-duration:0.3s;
+				
+			}
+			.btn:hover{
+				background: #F32043;
+				box-shadow: 1px 1px 10px rgba(0,0,0,0.8);
+			}
+			
+			ul li{
+				width: 150px;
+				height: 45px;
+				margin: 10px;
+				background: #F32043;
+				text-align: center;
+				font: 16px/45px "微软雅黑";
+				color: #fff;
+				/*transition-property:all;
+				transition-duration:10s;*/
+				transition: all 3s;
+				
+			}
+			ul:hover li{
+				width: 300px;
+				background: #008000;
+			}
+			ul li.e1{
+				/*先慢后快*/
+				transition-timing-function:cubic-bezier(1,0,0,1);
+			}
+			ul li.e2{
+				/*线性速度*/
+				transition-timing-function:linear;
+			}
+			
+			ul li.e3{
+				/*加速运动*/
+				transition-timing-function:ease-in;
+			}
+			ul li.e4{
+				/*减速运动*/
+				transition-timing-function:ease-out;
+			}
+			ul li.e5{
+				/*先慢后快再慢:区别于ease 加速减速过程所消耗时间比较长*/
+				transition-timing-function:ease-in-out;
+			}
+		</style>
+		<div class="w1000 mt15">
+			<!--<a href="javascript:;" class="btn">按钮</a>-->
+		</div>
+		
+		<ul>
+			<li class="e1">1号(ease)</li>
+			<li class="e2">2号(linear)</li>
+			<!--<li class="e3">3号(ease-in)</li>-->
+			<!--<li class="e4">4号(ease-out)</li>-->
+			<!--<li class="e5">5号(ease-in-out)</li>-->
+		</ul>
+	</body>
+</html>

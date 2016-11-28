@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			/*justify-content : 水平方向上对齐方式*/
+			/* flex-start :往第一个元素的方向靠齐   */
+			/* flex-end :往最后一个元素的方向靠齐   */
+			/* center :所有元素居中对齐   */
+			/* space-between : 元素两端对齐   */
+			/* space-around : 元素在容器内平均分布(与上一个属性值类似,区别在于两端会留有空隙)   */
+			
+			/*align-items: 垂直方向上的对齐方式*/
+			/* flex-start :往容器顶部靠齐   */
+			/* flex-end :往容器的底部靠齐   */
+			/* baseline : 以内容为基线对齐   */
+			/* center : 填充整个容器   */
+			
+			.box{
+				width: 800px;
+				height: 300px;
+				background: #ccc;
+				margin:50px auto;
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content : center;
+				align-items:stretch;
+			}
+			.item{
+				width: 100px;
+			}
+			.b-1{
+				padding: 30px;
+				background: #009F95;
+			}
+			.b-2{
+				padding: 10px 30px;
+				background: #F32043;
+			}
+			.b-3{
+				padding: 20 30px;
+				background: #F0AD4E;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item b-1">盒子1</div>
+			<div class="item b-2">盒子2</div>
+			<div class="item b-3">盒子3</div>
+		</div>
+	</body>
+</html>

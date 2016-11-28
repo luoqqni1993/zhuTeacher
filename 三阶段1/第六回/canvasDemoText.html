@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="zhu"></div>
+		<canvas id="myCan" width="1000" height="1000" class="block-center mt20"></canvas>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			
+			//设置字体大小以及字体样式
+			can.font = "70px Arial";
+			//设置文本的对齐基线
+			can.textBaseline = "ideographic";
+			
+			
+			can.strokeText("hello,1628",0,300);
+			
+			can.strokeRect(100,100,150,300);
+			var img = document.createElement("img");
+			img.src = "./public/images/img.jpg";
+			img.onload = function(){
+				can.drawImage(img,0,0);
+			}
+			
+//			var img = document.getElementById("abc");
+			
+		</script>
+	</body>
+</html>

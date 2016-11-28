@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+	</head>
+	<body>
+		<style type="text/css">
+			ul{
+				width: 200px;
+				background: #eee;
+				padding: 0 15px;
+			}
+			ul .abc{
+				font: 14px/40px "微软雅黑";
+				color: #333;
+				border-bottom: 1px dashed #999; 
+				padding: 0 8px;
+			}
+			/*ul .abc:last-child{
+				border-bottom: 0 none;
+			}*/
+			
+			/*ul .abc:first-child{
+				background: #f00;
+			}*/
+			
+			/* of-type: 会匹配对应的标签是否符合 */
+			/* child: 不会匹配对应的标签是否符合 */
+			
+			ul li.abc:last-of-type{
+				background: #f00;
+			}
+		</style>
+		<ul class="block-center">
+			<li class="abc">这是新闻标题</li>
+			<li class="abc">这是新闻标题</li>
+			<li class="abc">这是新闻标题</li>
+			<li class="abc">这是新闻标题</li>
+			<li class="abc">这是新闻标题</li>
+		</ul>
+	</body>
+</html>

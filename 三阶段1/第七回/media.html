@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+	</head>
+	<body>
+		<!--video 视频播放-->
+		<!--autoplay:视频/音频资源加载完毕之后自动播放-->
+		<!--controls:显示视频/音频的播放控制组件-->
+		<!--loop:视频/音频播放完成之后是否重新开始播放-->
+		<!--preload:设定当标签元素加载到页面当中的时候,视频资源加载的程度
+			值为auto(默认值):元素加载完毕的时候,开始加载视频和音频文件
+			值为metadata : 只加载视频/音频的元数据:包括播放资源的时长,视频的第一帧图像,等等相关信息,
+			值为none : 什么都不加载
+		-->
+		<!--<source/> 浏览器多种资源兼容-->
+		
+		<video class="block-center"  controls="controls" loop="loop" preload="metadata">
+			<source src="http://www.runoob.com/try/demo_source/movie.mp4" />
+			<source src="http://www.runoob.com/try/demo_source/movie.ogg" />
+			<source src="http://www.runoob.com/try/demo_source/movie.webm" />
+			对不起,您的浏览器不支持video!
+		</video>
+		
+			
+		<!--<audio src=""></audio>-->
+	</body>
+</html>

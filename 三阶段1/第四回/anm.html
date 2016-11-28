@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			.cd{
+				width: 350px;
+				height: 350px;
+				background: url(public/images/cd.png);
+				background-size: 100%;
+				position: relative;
+				margin-top: 50px;
+				animation: zr 3s linear infinite alternate;
+			}
+			.cd.dong{
+				/*定义好的动画名*/
+				animation-name: zr;
+				/*定义动画运行一个周期所消耗的时间*/
+				animation-duration:3s;
+				/*定义动画运行速度曲线*/
+				animation-timing-function:linear;
+				/*定义动画在多长时间之后开始执行*/
+				animation-delay:0s;
+				/*定义动画播放次数,可以填数字,也可以填infinite,代表无限次循环*/
+				animation-iteration-count:infinite;
+				/*定义动画是否反向播放,默认不反向,定义为alternate时则执行反向播放*/
+				animation-direction:alternate;
+			}
+			.cd.zt{
+				animation-play-state:paused;
+			}
+			.cd img{
+				width: 200px;
+				height: 200px;
+				border-radius: 200px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+			
+			@keyframes zr{
+				from{
+					transform: rotate(0);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes zw{
+				from{width: 350px;}
+				to{width: 450px;}
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="cd block-center">
+			<img src="public/images/img.jpg" alt="" />
+		</div>
+	</body>
+</html>

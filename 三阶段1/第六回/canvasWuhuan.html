@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="1000" height="1000" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			
+			can.lineWidth = 10;
+			
+			can.strokeStyle = "#0093dd";
+			can.arc(70,100,50,0,2*Math.PI);
+			can.stroke();
+			can.beginPath();
+			
+			can.strokeStyle = "#000";
+			can.arc(190,100,50,0,2*Math.PI);
+			can.stroke();
+			can.beginPath();
+			
+			can.strokeStyle = "#df313a";
+			can.arc(310,100,50,0,2*Math.PI);
+			can.stroke();
+			can.beginPath();
+			
+			can.strokeStyle = "#fcf700";
+			can.arc(130,150,50,0,2*Math.PI);
+			can.stroke();
+			can.beginPath();
+			
+			can.strokeStyle = "#019243";
+			can.arc(250,150,50,0,2*Math.PI);
+			can.stroke();
+			can.beginPath();
+			
+			can.strokeStyle = "#0093dd";
+			can.arc(70,100,50,-0.25*Math.PI,0.252*Math.PI);
+			can.stroke();
+			can.beginPath();
+			
+			can.strokeStyle = "#000";
+			can.arc(190,100,50,0.5*Math.PI,0.75*Math.PI);
+			can.stroke();
+			can.beginPath();
+			can.strokeStyle = "#000";
+			can.arc(190,100,50,-0.25*Math.PI,0.25*Math.PI);
+			can.stroke();
+			can.beginPath();
+			
+			can.strokeStyle = "#df313a";
+			can.arc(310,100,50,0.75*Math.PI,-0.75*Math.PI);
+			can.stroke();
+			can.beginPath();
+		</script>
+	</body>
+</html>

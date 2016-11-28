@@ -1,0 +1,178 @@
+//设置宽高
+.wh(@w,@h){
+    width:@w;
+    height: @h;
+}
+//定义margin值
+.mt(@i){
+    margin-top: @i;
+}
+.ml(@i){
+    margin-left: @i;
+}
+.mr(@i){
+    margin-right: @i;
+}
+.mb(@i){
+    margin-bottom: @i;
+}
+.mc(){
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//定义padding
+.pt(@i){
+    padding-top: @i;
+}
+.pb(@i){
+    padding-bottom: @i;
+}
+.pl(@i){
+    padding-left: @i;
+}
+.pr(@i){
+    padding-right: @i;
+}
+
+//单行垂直居中
+.hc(@i){
+    height: @i;
+    line-height: @i;
+}
+//定义三角形
+.ltne(@height,@color){//向左
+    border-right: @height solid @color;
+    border-top:@height solid transparent;
+    border-bottom:@height solid transparent;
+}
+.rtne(@height,@color){//向右
+    border-left: @height solid @color;
+    border-top:@height solid transparent;
+    border-bottom:@height solid transparent;
+}
+.ttne(@height,@color){//向上
+    border-bottom: @height solid @color;
+    border-left:@height solid transparent;
+    border-right:@height solid transparent;
+}
+.btne(@height,@color){//向下
+    border-top: @height solid @color;
+    border-left:@height solid transparent;
+    border-right:@height solid transparent;
+}
+
+//定义等腰三角形,底边宽度可自定义
+.ltne(@height,@width,@color){
+    border-right: @height solid @color;
+    border-top:@width/2 solid transparent;
+    border-bottom:@width/2 solid transparent;
+}
+.rtne(@height,@width,@color){
+    border-left: @height solid @color;
+    border-top:@width/2 solid transparent;
+    border-bottom:@width/2 solid transparent;
+}
+.ttne(@height,@width,@color){
+    border-bottom: @height solid @color;
+    border-left:@width/2 solid transparent;
+    border-right:@width/2 solid transparent;
+}
+.btne(@height,@width,@color){
+    border-top: @height solid @color;
+    border-left:@width/2 solid transparent;
+    border-right:@width/2 solid transparent;
+}
+//可自由定义三角形三边长度
+.ltne(@height,@width1,@width2,@color){
+    border-right: @height solid @color;
+    border-top:@width1 solid transparent;
+    border-bottom:@width2 solid transparent;
+}
+.rtne(@height,@width1,@width2,@color){
+    border-left: @height solid @color;
+    border-top:@width1 solid transparent;
+    border-bottom:@width2 solid transparent;
+}
+.ttne(@height,@width1,@width2,@color){
+    border-bottom: @height solid @color;
+    border-left:@width1 solid transparent;
+    border-right:@width2 solid transparent;
+}
+.btne(@height,@width1,@width2,@color){
+    border-top: @height solid @color;
+    border-left:@width1 solid transparent;
+    border-right:@width2 solid transparent;
+}
+
+
+//定义按钮常规样式
+.btn(@w,@h,@bg,@r:5px,@fz:14px){
+    display: block;
+    .wh(@w,@h);
+    font:@fz/@h "microsoft yahei";
+    text-align: center;
+    text-decoration: none;
+    border-radius: @r;
+}
+.tm(@content){
+    transform:@content ;
+    -webkit-transform:@content ;
+    -o-transform:@content ;
+    -moz-transform:@content ;
+    -ms-transform:@content ;
+}
+//只有两个函数的情况,向底部渐变
+.tlg(@cs,@ce){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,a1dbff+100 */
+    background: @cs; /* Old browsers */
+    background: -moz-linear-gradient(top,  @cs 0%, @ce 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  @cs 0%,@ce 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  @cs 0%,@ce 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter : progid:DXImageTransform.Microsoft.gradient( startColorstr = %("%a",argb(@cs)), endColorstr = %("%a",argb(@ce)),GradientType=0);
+}
+.tlg(@cs,@cc1,@cc2,@ce...){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,43cff9+100 */
+    background: extract(@arguments, 1); /* Old browsers */
+    background: -moz-linear-gradient(top,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= %("%a",argb(extract(@arguments, 1))), endColorstr=  %("%a",argb(extract(@arguments, 7))),GradientType=0 ); /* IE6-9 */
+}
+//向左边渐变
+.llg(@cs,@ce){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,a1dbff+100 */
+    background: @cs; /* Old browsers */
+    background: -moz-linear-gradient(left,  @cs 0%, @ce 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  @cs 0%,@ce 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  @cs 0%,@ce 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter : progid:DXImageTransform.Microsoft.gradient( startColorstr = %("%a",argb(@cs)), endColorstr = %("%a",argb(@ce)),GradientType=1);
+}
+.llg(@cs,@cc1,@cc2,@ce...){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,43cff9+100 */
+    background: extract(@arguments, 1); /* Old browsers */
+    background: -moz-linear-gradient(left,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  extract(@arguments, 1) extract(@arguments, 2),extract(@arguments, 3) extract(@arguments, 4),extract(@arguments, 5) extract(@arguments, 6),extract(@arguments, 7) extract(@arguments, 8)); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= %("%a",argb(extract(@arguments, 1))), endColorstr=  %("%a",argb(extract(@arguments, 7))),GradientType=0 ); /* IE6-9 */
+}
+//径向渐变
+.rg(@cs,@ce){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,a1dbff+100 */
+    background: @cs; /* Old browsers */
+    background: -moz-linear-gradient(left,  @cs 0%, @ce 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  @cs 0%,@ce 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  @cs 0%,@ce 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter : progid:DXImageTransform.Microsoft.gradient( startColorstr = %("%a",argb(@cs)), endColorstr = %("%a",argb(@ce)),GradientType=1);
+}
+.ab(){
+    content:"";
+    display: block;
+}
+.clr(){
+    &:after{
+        .ab();
+        clear: both;
+    }
+}
+

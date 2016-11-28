@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//获取storage当中数据的数量
+			var stLgh = localStorage.length;
+			for(var i = 0; i < stLgh; i++){
+				
+				//获取storage当中某个角标的key值
+				var keyName = localStorage.key(i);
+				console.log("key:"+keyName);
+				var content = localStorage.getItem(keyName);
+				console.log("content:"+content+"\n");
+				console.log("\n");
+			}
+		</script>
+	</body>
+</html>

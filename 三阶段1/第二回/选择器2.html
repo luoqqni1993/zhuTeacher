@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+	</head>
+	<body>
+		<style type="text/css">
+			.aaa{
+				margin-top: 100px;
+			}
+			
+			/*选择仅为aaa的子元素的abc元素*/
+			.aaa>.abc{
+				background:rgba(0,0,0,0.2)
+			}
+			/*选择上一个元素class名为aaa的abc元素*/
+			.aaa+.abc{
+				background:rgba(0,0,0,0.2)
+			}
+			.box{
+				width: 100px;
+				height: 30px;
+			}
+			/*选择所有class名为zhu的class名为box的标签*/
+			.zhu~.box{
+			}
+			/*选择每个不是括号内的元素的元素,本例中是选择所有class名没有abc而且不是p标签的元素 */
+			.box:not(.abc):not(p){
+				color:#f00;
+			}
+			
+			/*选择每个内容为空的box元素*/
+			.box:empty{
+				background: #f00;
+			}
+			.content .zhu{
+				width: 100px;
+				height: 30px;
+			}
+			
+			/*当前元素为父级唯一子元素时生效*/
+			.content p:only-child{
+				background: #000000;
+			}
+			/*当前元素为父级唯一同类型子元素时生效*/
+			/*(本例中为父级唯一p元素的时候生效)*/
+			.content p:only-of-type{
+				background: #000000;
+			}
+		</style>
+		<div class="aaa w1000">
+			<p class="abc">
+				p元素内容
+				<span class="abc">span 元素内容</span>
+			</p>
+		</div>
+		
+		<div class="zhu">zhu</div>
+		<div class="box">box</div>
+		<p class="box"></p>
+		<div class="box abc">box</div>
+		<div class="box">box</div>
+		
+		<div class="content">
+			<p class="zhu"></p>
+			<div class="abc"></div>
+		</div>
+		
+	</body>
+</html>

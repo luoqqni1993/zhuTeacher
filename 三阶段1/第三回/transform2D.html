@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+	</head>
+	<body>
+		<!-- transform -->
+		<!-- 平移,x轴方向,y轴方向 -->
+		<!--translate():只有一个值的时候默认x轴方向进行移动,
+		translateX():x轴方向移动
+		translateY():轴方向移动
+		translate(X,Y):简写,同时对x和y轴方向移动
+		值的单位可以是px,rem,em,%等,为%的时候,是相对于元素本身宽高的比值-->
+		
+		<!-- 旋转,默认顺时针,值为负值的时候,逆时针 -->
+		<!--rotate():顺时针,沿着中心点进行旋转 单位为deg 值为负的时候,则进行逆时针旋转-->
+		
+		<!-- 缩放,x轴方向,y轴方向-->
+		<!--scale():只有一个值的时候,默认同时对x轴和y轴方向进行缩放
+		scaleX():仅对X轴方向进行缩放
+		scaleY():仅对Y轴方向进行缩放
+		scale(x,y):分别对x轴和y轴方向进行缩放
+		没有单位,1是保持原样,小于1大于0,是进行缩小,大于1是放大,负值为翻转-->
+		
+		<!-- 斜切-->
+		<!--skew():只有一个值的时候,默认只沿着x轴进行斜切,y轴方向有对应角度变化
+		skewX():沿着x轴进行斜切,y轴方向有对应角度变化
+		skewY():沿着y轴进行斜切,x轴方向有对应角度变化
+		skew(x,y):分别沿着x轴进行斜切,y轴进行斜切
+		值的单位为deg-->
+		
+		<!--matrix():-->
+		<!--
+			matrix(n,n,n,n,n,n),定义 2D 转换，使用六个值的矩阵。
+			下面说明该6个参数的值：
+			
+			将6个参数分别定义为a,b,c,d,e,f
+			
+			如果e和f不为0，则表示该内容需要进行位移
+			
+			如果6个参数的形式为(a,0,0,d,e,f)
+			则表示该内容要进行缩放，a表示在X轴上缩放的比例，d表示在Y轴上缩放的比例
+			
+			如果6个参数的形式为(a,b,c,d,e,f)，并且a,b,c,d都小于1，且a=c,b=-d;
+			则表示该内容要进行旋转，设定旋转角度为t,则6个参数的值为(cos@,sin@,-sin@,cos@,e,f),
+			所以一般见到前4个参数都为小于1的，且b和c为相反数的，即为旋转角度
+			
+			如果6个参数的形式为(a,b,c,d,e,f),并且b,c都小于1，而a,d都等于1
+			则表示需要拉伸，设定拉伸角度为tx和ty,则6个参数的值为(1,tanθy,tanθx,1,e,f),
+			注意第2个参数和第3个参数分别代表的意义
+			θx表示x轴倾斜的角度，θy表示y轴，两者并无关联
+			
+		-->
+		
+		<style type="text/css">
+			.box{
+				width:700px;
+				height: 80px;
+				background: #00C1B3;
+				transform : translate(-50%);
+			}
+			
+			.box2{
+				width:300px;
+				height: 80px;
+				background: #00C1B3;
+				transform : rotate(45deg)translateY(100px);
+			}
+			
+			.box3{
+				width:300px;
+				height: 80px;
+				background: #00C1B3;
+				transform :scale(2,1.5);
+			}
+			
+			.box4{
+				width:300px;
+				height: 80px;
+				background: #00C1B3;
+				transform :rotate(40deg)translateY(200px);
+			}
+			.box5{
+				width:300px;
+				height: 80px;
+				background: #00C1B3;
+				transform :matrix(1,0.5,-0.5,1,100,100);
+			}
+			.mt20{
+				background: #ccc;
+				height: 500px;
+			}
+		</style>
+		<div class="w1000 mt20">
+			<div class="box" hidden="hidden"></div>
+			<div class="box2" hidden="hidden"></div>
+			<div class="box3" hidden="hidden">这是一行文本内容</div>
+			<div class="box4">这是一行文本内容</div>
+			<div class="box5">这是一行文本内容</div>
+		</div>
+	</body>
+</html>

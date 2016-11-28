@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		
+	</head>
+	<body>
+		<progress value="10" max="100" id="pro"></progress>
+		
+		<audio id="adPlay" controls="controls">
+			<source src="public/music/演员 - 薛之谦.ogg" />
+			<source src="public/music/演员 - 薛之谦.mp3" />
+		</audio>
+		
+		<a href="javascript:;" class="play" onclick="abc()">播放</a>
+		<a href="javascript:;" class="play" onclick="ac()">暂停</a>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+//			获取js dom对象
+			var aDom = document.getElementById("adPlay");
+			getTime();
+			
+			var countTime = 0;
+			function getTime(){
+				setTimeout(function(){
+					if(isNaN(aDom.duration) || aDom.duration == Infinity){
+						getTime();
+					}else{
+						countTime = aDom.duration;
+						console.log(countTime);
+						$("#pro").attr("max",countTime);
+					}
+				},10);
+			}
+			
+			setInterval(function(){
+				$("#pro").attr("value",aDom.currentTime);
+			},1000);
+			
+			function abc(){
+				aDom.play();
+				aDom.volume = 0.2;
+				console.log(aDom.volume);
+			}
+			function ac(){
+				aDom.pause();
+				console.log(aDom.paused);
+			}
+			
+//			对象属性:
+//			autoplay:设置是否自动播放音频/视频
+//			controls:设置是否显示自带的播放控件
+//			currentSrc:当前音频/视频的资源地址
+//			currentTime:当前的音频/视频已播放多少秒
+//			defaultMuted:当前对象的静音状态
+//			muted:设置或者返回当前对象是否关闭声音
+//			defaultPlaybackRate:当前对象的播放速度
+//			duration:当前对象的总播放时长
+//			ended:当前对象是否播放结束
+//			loop:设置当前对象播放结束后是否继续播放,或者返回当前对象是否是重复播放的状态
+//			preload:返回当前对象的preload属性(自动加载所有数据/只加载元数据/什么都不加载)值
+//			volume : 设置或者返回当前播放对象的音量值,最大值为1,最小值为0
+
+//			对象方法
+//			play():播放当前的音频/视频对象
+//			pause():暂停当前的音频/视频对象
+//			load():重新加载当前的音频/视频对象 
+//			fastSeek():指定当前对象的播放位置
+//			canPlayType():检查当前浏览器能够播放的音频/视频格式
+		</script>
+	</body>
+</html>

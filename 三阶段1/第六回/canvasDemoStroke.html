@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="500" height="500" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			
+			can.lineWidth = 30;
+			
+//			设置线段两端样式
+			can.lineCap = "round";
+//			butt : 默认,直角
+//			round : 圆形端点
+//			square : 方形端点
+			
+			//设置折线拐角部分样式
+			can.lineJoin = "miter";
+			can.miterLimit=20;
+//			round : 圆形拐角
+//			bevel : 折形拐角
+//			miter : 默认,尖角
+
+			
+			
+			can.moveTo(100,100);
+			can.lineTo(200,100);
+			can.lineTo(100,160);
+			can.stroke();
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			.box{
+				display: flex;
+				width: 900px;
+				margin:50px auto ;
+				background: #ccc;
+			}
+			.item{
+				height: 90px;
+			}
+			.b-1{
+				background: #009F95;
+				flex-grow: 3;/*父级盒子宽度大于子级和的时候,子容器扩展比例*/
+				flex-shrink : 1;/*父级盒子宽度小于子级和的时候,子容器压缩比例*/
+				flex-basis : 300px;/*基准值,用来比较判断父级容器是大于子级和还是小于子级和*/
+				/*flex: 3 1 300px; 上面三种属性值缩写*/
+				/*flex: 3; 宽度按比例分配*/				
+			}
+			.b-2{
+				background: #F0AD4E;
+				flex-grow: 2;
+				flex-shrink : 2;
+				flex-basis : 300px;
+			}
+			.b-3{
+				background: #FF00FF;
+				flex-grow: 1;
+				flex-shrink : 3;
+				flex-basis : 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item b-1">盒子1</div>
+			<div class="item b-2">盒子2</div>
+			<div class="item b-3">盒子3</div>
+		</div>
+	</body>
+</html>

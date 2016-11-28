@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="500" height="500" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			
+			//创建渐变对象
+			
+			var jianb = can.createRadialGradient(150,150,70,150,150,0);//参数分别为起点坐标值以及起点半径,结束点坐标值以及结束点半径
+//			var jianb = can.createLinearGradient(100,100,100,300);参数分别为起点坐标值,和结束点坐标值
+//			can.createRadialGradient:创建径向渐变
+			jianb.addColorStop(0,"#fff");//设置渐变间隔,颜色值
+			jianb.addColorStop(1,"#f00");
+			
+//			can.lineWidth = 10;
+			
+			//讲渐变对象赋给fillStyle
+			can.fillStyle = jianb;
+			
+			can.rect(100,100,200,200);
+			can.fill();
+			
+		</script>
+	</body>
+</html>

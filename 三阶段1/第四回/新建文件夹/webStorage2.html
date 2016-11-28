@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			localStorage.setItem("data","你好,1628");
+			sessionStorage.setItem("data","hello,1628");
+			
+			var data = localStorage.getItem("data");
+			var data2 = sessionStorage.getItem("data");
+			document.write("local:"+data+"<br/><br/>");
+			document.write("session:"+data2);
+		</script>
+	</body>
+</html>

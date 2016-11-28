@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			ul li{
+				width: 33.333%;
+				height: 130px;
+				background: #009F95;
+				text-align: center;
+				line-height: 130px;
+				color: #fff;
+				float: left;
+				box-sizing: border-box;
+				border:3px solid #fff;
+				border-radius: 8px;
+			}
+			ul li.active{
+				background: #F32043;
+				color: #FFE400;
+			}
+			ul li.btn{
+				background: #F0AD4E;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="clearfix">
+			<li class="active" id="m-1" data-id="1">1等奖</li>
+			<li id="m-2" data-id="2">2等奖</li>
+			<li id="m-3" data-id="3">3等奖</li>
+			<li id="m-8" data-id="8">8等奖</li>
+			<li class="btn">抽奖</li>
+			<li id="m-4" data-id="4">4等奖</li>
+			<li id="m-7" data-id="7">7等奖</li>
+			<li id="m-6" data-id="6">6等奖</li>
+			<li id="m-5" data-id="5">5等奖</li>
+		</ul>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var isRun = false;
+			var status = "acc";//"slo","scu"
+			
+			$(".btn").click(function(){
+				if(!isRun){
+					run(7);				
+				}
+			})
+			
+			function run(level){
+				var quan = 7;//剩余圈数
+				var time = 1000;//运行间隔
+				
+				isRun = true;
+				if(!!arguments[1] || arguments[1] == 0){//第二个参数存在的情况下
+					quan = arguments[1];//剩余圈数等于传进来的参数
+				}
+				
+				if(!!arguments[2]){//第三个参数存在的情况下
+					time = arguments[2];//执行时间间隔等于传进来的参数
+				}
+				
+				
+				if(time > 200 && status == "acc"){//必须是加速状态,才能进行加速动作
+					time -= 100;
+				}else if(status == "acc" && quan <= 0){
+					time = 100;
+					status = "slo";//速度达到巅峰状态,并且是出于加速状态的时候,进行状态转变,变成减速
+				}
+				
+				if(time < 1000 && status == "slo"){//必须是减速状态,才能开始减速
+					time += 100;
+				}else if(status == "slo"){//速度将为最低,并且状态为减速的时候,进行状态转变,变成速度稳定
+					time = 1000;
+					status = "scu";
+				}
+				
+				console.log(quan);
+				setTimeout(function(){
+					//获取当前奖项
+					var index = $(".active").attr("data-id");
+					//奖项+1
+					index++;
+					
+					if(index > 8){
+						index = 1;
+						quan --;
+					}
+					
+					$(".active").removeClass("active");
+					$("#m-"+index).addClass("active");
+					console.log(status);
+					if(index != level || quan > 0 || status != "scu"){
+						run(level,quan,time);
+					}else{
+						isRun = false;
+					}
+				},time);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			canvas{
+				border:1px dashed #999;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCan" width="500" height="500" class="block-center mt20"></canvas>
+		<script type="text/javascript">
+			var dom = document.getElementById("myCan");
+			var can = dom.getContext("2d");
+			//保存画布目前的状态,包括缩放,旋转,坐标轴位移
+			can.save();
+			
+			can.fillStyle = "#FFff00";
+			//缩放,包括当前画布的位置值,以及将要画的元素本身都会被缩放
+//			can.scale(1,2);
+			can.translate(50,350);
+			can.rotate(-0.25*Math.PI);
+			can.rect(-50,-50,100,100);
+			can.fill();
+			can.beginPath();
+			
+			//取出上一次保存的画布状态,包括缩放,旋转,坐标轴位移
+			can.restore();
+			
+			can.fillStyle = "#F32043";
+			can.rect(100,100,200,50);
+			can.fill();
+			can.beginPath();
+//			
+			
+			
+			
+		</script>
+	</body>
+</html>

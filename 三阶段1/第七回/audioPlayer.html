@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+		<audio id="player"></audio>
+		<progress id="pro" ></progress>
+		<input type="range" max="100" min="0" id="vol"/>
+		<a href="javascript:;" class="btn" id="playBtn">播放</a>
+		<a href="javascript:;" class="btn tabBtn" data-act="0">上一曲</a>
+		<a href="javascript:;" class="btn tabBtn" data-act="1">下一曲</a>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var player = document.getElementById("player");
+			var song = [
+				{
+					name : "演员",
+					singer : "薛之谦",
+					album : "绅士",
+					url : ["public/music/演员 - 薛之谦.ogg","public/music/演员 - 薛之谦.mp3"]
+				},
+				{
+					name : "丑八怪",
+					singer : "薛之谦",
+					album : "绅士",
+					url : ["public/music/丑八怪 - 薛之谦.ogg","public/music/丑八怪 - 薛之谦.mp3"]
+				},
+				{
+					name : "认真的雪",
+					singer : "薛之谦",
+					album : "绅士",
+					url : ["public/music/认真的雪 - 薛之谦.ogg","public/music/认真的雪 - 薛之谦.mp3"]
+				},
+				{
+					name : "一半",
+					singer : "薛之谦",
+					album : "绅士",
+					url : ["public/music/一半 - 薛之谦.ogg","public/music/一半 - 薛之谦.mp3"]
+				}
+			];
+			
+			playerInit();
+			
+			function playerInit(){
+//				
+				player.vol = player.volume;
+				
+//				player.volume = 0;
+				
+				$("#vol").val(player.vol*100);
+				
+				player.musicIndex = 0;
+				var urlItem = song[0].url;
+				for(var i in urlItem ){
+					var source = $("<source src='"+urlItem[i]+"' />");
+					$(player).append(source);
+				}
+			}
+			//点击播放暂停按钮
+			$("#playBtn").click(function(){
+				
+				//进行传值: 值为布尔值,决定声音变大还是声音变小
+				function run(isPlay){
+					setTimeout(function(){
+						
+						if(isPlay){//声音慢慢变大
+							if(player.volume < player.vol){
+								if(player.volume + 0.05 > 1){//当当前值大于1的时候,就让音量值为1
+									player.volume = 1;
+								}else{//当前音量值不大于1的情况,才能继续执行递归
+									player.volume += 0.05;
+									run(isPlay);
+								}
+							}
+						}else{//声音慢慢变小
+							if(player.volume > 0){
+								
+								if(player.volume - 0.05 < 0){
+									player.volume = 0;
+									console.log("执行暂停动作");
+									player.pause();
+								}else{
+									player.volume -= 0.05;
+									run(isPlay);
+								}
+							}else{
+								console.log("执行暂停动作");
+								player.pause();//执行暂停
+							}
+						}
+					},100);
+				}
+				
+				if(player.paused){//点击执行播放
+					
+					player.volume = 0;
+					player.play();
+					run(true);//音量开始慢慢变大
+					$(this).text("暂停");
+					
+				}else{
+					run(false);
+					$(this).text("播放");
+				}
+				
+				
+			});
+			
+//			点击上一曲下一曲按钮
+			$(".tabBtn").click(function(){
+				if(player.readyState == 4){//歌曲播放是否准备就绪
+//				获取当前播放的歌曲索引
+				var mIndex = player.musicIndex;	
+//				获取当前歌曲是否是播放状态
+				var mState = player.paused;
+				
+//				进行计算
+				var act = $(this).attr("data-act");
+				
+				
+				if(act == 0){//当前点击的按钮是上一曲
+					if(mIndex == 0){
+						mIndex = song.length-1;
+					}else{
+						mIndex --;
+					}
+				}else if(act == 1){//当前点击的按钮是下一曲
+					if(mIndex == song.length-1){
+						mIndex = 0;
+					}else{
+						mIndex ++;
+					}
+				}
+				
+				//当前播放的歌曲索引重新存入
+				player.musicdInex = mIndex;
+				var urlItem = song[mIndex].url;
+				
+				$(player).empty();
+				
+				for(var i in urlItem ){
+					var source = $("<source src='"+urlItem[i]+"' />");
+					$(player).append(source);
+				}
+				
+				player.load();
+				
+				if(!mState){
+					isReady();
+				};
+				
+				function isReady(){//自动检查当前的音频是否准备就绪,准备就绪就立即执行播放.否者,再隔100毫秒检查一次
+				 player.ready = 	setTimeout(function(){
+						if(player.readyState){//就绪完成
+								player.play();
+						}else{//没有准备就绪
+							isReady();
+						}
+					},100);
+				}
+				
+			}	
+			});
+			
+			$("#vol").on("input",function(){
+				player.volume = $(this).val()/100;
+				player.vol = player.volume;
+			});
+		</script>
+	</body>
+</html>

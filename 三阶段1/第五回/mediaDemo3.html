@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<style type="text/css">
+			.box{
+				height: 150px;
+			}
+			@media only screen and (min-width: 900px){
+				.box:after{
+					content: "大于900px的情况";
+				}				
+			}
+			@media only screen and (max-width: 800px) {
+				.box:after{
+					content: "小于800px的情况";
+				}
+			}
+			@media only screen and (min-width:800px) and (max-width : 900px){
+				.box:after{
+					content: "大于800px,小于900px的情况";
+				}				
+			}
+			
+			/* orientation: 匹配横竖屏的情况
+			 * 值:  portrait (竖屏)
+			 * 值: landscape (横屏)*/
+			@media only screen and (orientation :landscape) {
+				.box:after{
+					content: "当前屏幕为landscape";
+				}	
+			}
+			@media only screen and (orientation :portrait) {
+				.box:after{
+					content: "当前屏幕为portrait";
+				}	
+			}
+			@media only screen and (min-resolution:199dpi) {
+				.box:after{
+					content: "当前屏幕是高分屏";
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		</div>
+	</body>
+</html>
